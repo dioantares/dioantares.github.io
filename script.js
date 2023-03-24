@@ -7,4 +7,5 @@ function handleSubmit(event) {
     console.log("JSONstring length: " + jsonstring.length);
 }
 
+let form = document.querySelector('form');
 form.addEventListener('submit', handleSubmit);
