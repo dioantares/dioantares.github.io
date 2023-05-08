@@ -789,10 +789,67 @@
             </div>
         </form>
     </div>
-    
+
     <!-- Create a canvas element to render the QR code -->
     <div id="qrcode" style="display: block; margin-top: 20px"></div>
-    
+
+    <script>
+        function generateQRCode(event) {
+            event.preventDefault();
+            // Get the form input values
+            var name = document.getElementById("name").value;
+            var gender = document.getElementById("gender").value;
+            var birthDate = document.getElementById("birthdate").value;
+            var birthPlace = document.getElementById("birthplace").value;
+            var religion = document.getElementById("religion").value;
+            var diocese = document.getElementById("diocese").value;
+            var parish = document.getElementById("parish").value;
+            var community = document.getElementById("community").value;
+            var bloodType = document.getElementById("bloodtype").value;
+            var ethnicity = document.getElementById("ethnicity").value;
+            var nationality = document.getElementById("nationality").value;
+            var mainLanguage = document.getElementById("mainLanguage").value;
+            var protestantType = document.getElementById("protestantType").value;
+            var previousReligion = document.getElementById("previousReligion").value;
+
+            // Create a JSON object
+            var data = {
+                name: name,
+                gender: gender,
+                birthDate: birthDate,
+                birthPlace: birthPlace,
+                religion: religion,
+                diocese: diocese,
+                parish: parish,
+                community: community,
+                bloodType: bloodType,
+                ethnicity: ethnicity,
+                nationality: nationality,
+                mainLanguage: mainLanguage,
+                protestantType: protestantType,
+                previousReligion: previousReligion,
+            };
+
+            // Convert the JSON object to a string
+            var jsonString = JSON.stringify(data);
+            console.log(jsonString);
+
+            // Get the canvas element
+            var qrcodeContainer = document.getElementById("qrcode");
+            qrcodeContainer.innerHTML = "";
+
+            // Create a QRCode instance
+            var qrcode = new QRCode(qrcodeContainer, {
+                text: jsonString,
+                width: 128,
+                height: 128,
+            });
+
+            // Render the QR code
+            // qrcode.make();
+        }
+    </script>
+
     <script src="script.js"></script>
 </body>
 
