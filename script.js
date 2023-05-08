@@ -1,38 +1,54 @@
-function handleSubmit(event) {
+function generateQRCode(event) {
     event.preventDefault();
-    let data = new FormData(event.target);
-    let value = Object.fromEntries(data.entries());
-    let jsonstring = JSON.stringify(value);
-    console.log("JSONstring: " + jsonstring);
-    console.log("JSONstring length: " + jsonstring.length);
+    // Get the form input values
+    var name = document.getElementById("name").value;
+    var gender = document.getElementById("gender").value;
+    var birthDate = document.getElementById("birthdate").value;
+    var birthPlace = document.getElementById("birthplace").value;
+    var religion = document.getElementById("religion").value;
+    var diocese = document.getElementById("diocese").value;
+    var parish = document.getElementById("parish").value;
+    var community = document.getElementById("community").value;
+    var bloodType = document.getElementById("bloodtype").value;
+    var ethnicity = document.getElementById("ethnicity").value;
+    var nationality = document.getElementById("nationality").value;
+    var mainLanguage = document.getElementById("mainLanguage").value;
+    var protestantType = document.getElementById("protestantType").value;
+    var previousReligion = document.getElementById("previousReligion").value;
+
+    // Create a JSON object
+    var data = {
+        name: name,
+        gender: gender,
+        birthDate: birthDate,
+        birthPlace: birthPlace,
+        religion: religion,
+        diocese: diocese,
+        parish: parish,
+        community: community,
+        bloodType: bloodType,
+        ethnicity: ethnicity,
+        nationality: nationality,
+        mainLanguage: mainLanguage,
+        protestantType: protestantType,
+        previousReligion: previousReligion,
+    };
+
+    // Convert the JSON object to a string
+    var jsonString = JSON.stringify(data);
+    console.log(jsonString);
+
+    // Get the canvas element
+    var qrcodeContainer = document.getElementById("qrcode");
+    qrcodeContainer.innerHTML = "";
+
+    // Create a QRCode instance
+    var qrcode = new QRCode(qrcodeContainer, {
+        text: jsonString,
+        width: 128,
+        height: 128,
+    });
+
+    // Render the QR code
+    // qrcode.make();
 }
-
-//mengkompress JSON
-let jsonstringcompressed = LZString.compressToBase64(jsonstring);
-console.log("compressed: " + jsonstringcompressed);
-console.log("compressed length: " + jsonstringcompressed.length);
-
-// menentukan jumlah qrcode yang dibutuhkan untuk mencakup seluruh data kompresi JSON 
-// masing-masing qrcode panjangnya 128
-let max = Math.ceil(jsonstringcompressed.length / 128);
-console.log(max);
-
-let qrDiv = document.getElementById("qrcode");
-
-let i = 1;
-
-while (i <= max) {
-    //membuat string hasil pecahan untuk qrcode
-    let currStr = jsonstringcompressed.substring(0, 129);
-    jsonstringcompressed = jsonstringcompressed.substring(129);
-    let jsonPecahan = "{seq:" + i + ",max:" + max + "," + currStr + "}";
-    console.log(jsonPecahan);
-
-    //membuat qrcode
-    new QRCode(qrDiv, jsonPecahan);
-    i++;
-}
-    
-
-let form = document.querySelector('form');
-form.addEventListener('submit', handleSubmit);
