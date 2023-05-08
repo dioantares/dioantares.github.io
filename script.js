@@ -45,8 +45,8 @@ function generateQRCode(event) {
     // Create a QRCode instance
     var qrcode = new QRCode(qrcodeContainer, {
         text: jsonString,
-        width: 128,
-        height: 128,
+        width: 256,
+        height: 256,
     });
 
     // Render the QR code
