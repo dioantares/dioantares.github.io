@@ -1,6 +1,6 @@
 function generateQRCode(event) {
     event.preventDefault();
-    // Get the form input values
+    // Form Data Diri
     var name = document.getElementById("name").value;
     var gender = document.getElementById("gender").value;
     var birthDate = document.getElementById("birthdate").value;
@@ -16,8 +16,16 @@ function generateQRCode(event) {
     var protestantType = document.getElementById("protestantType").value;
     var previousReligion = document.getElementById("previousReligion").value;
 
+    //Form Kontak
+
+    var alamat = document.getElementById("alamat").value;
+    var kabupaten = document.getElementById("kabupaten").value;
+
+
     // Create a JSON object
     var data = {
+
+        //Form Data Diri
         name: name,
         gender: gender,
         birthDate: birthDate,
@@ -48,6 +56,29 @@ function generateQRCode(event) {
         width: 256,
         height: 256,
     });
+
+    var dataKontak = {
+        //Form Kontak
+
+        alamat: alamat,
+        kabupaten: kabupaten,
+    }
+    
+    var jsonString = JSON.stringify(dataKontak);
+    console.log(jsonString);
+
+    // Get the canvas element
+    var qrcodeContainer = document.getElementById("qrcode2");
+    qrcodeContainer.innerHTML = "";
+
+    // Create a QRCode instance
+    var qrcode2 = new QRCode(qrcodeContainer, {
+        text: jsonString,
+        width: 256,
+        height: 256,
+    });
+
+
 
     // Render the QR code
     // qrcode.make();
