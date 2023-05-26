@@ -70,11 +70,11 @@ function generateQRCode(event) {
     console.log(jsonString);
 
     // Get the canvas element
-    var qrcodeContainer = document.getElementById("qrcode2");
-    qrcodeContainer.innerHTML = "";
+    var qrcodeContainer2 = document.getElementById("qrcode2");
+    qrcodeContainer2.innerHTML = "";
 
     // Create a QRCode instance
-    var qrcode2 = new QRCode(qrcodeContainer, {
+    var qrcode2 = new QRCode(qrcodeContainer2, {
         text: jsonString,
         width: 256,
         height: 256,
