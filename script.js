@@ -20,6 +20,7 @@ function generateQRCode(event) {
 
     var alamat = document.getElementById("alamat").value;
     var kabupaten = document.getElementById("kabupaten").value;
+    var kota = document.getElementById("kota").value;
 
 
     // Create a JSON object
@@ -62,6 +63,7 @@ function generateQRCode(event) {
 
         alamat: alamat,
         kabupaten: kabupaten,
+        kota: kota,
     }
     
     var jsonString = JSON.stringify(dataKontak);
