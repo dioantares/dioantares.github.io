@@ -422,6 +422,9 @@ function generateQRCode(event) {
 
     // Render the QR code
     // qrcode.make();
+}
+
+function setCookie(){
 
     // Set Cookies
 
