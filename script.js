@@ -1,3 +1,14 @@
+function setCookie(){
+
+    // Set Cookies
+
+    const name = document.getElementById("name").value;
+    const gender = document.getElementById("gender").value;
+
+    document.cookie = "Nama" + name;
+    document.cookie = "Jenis Kelamin" + gender;
+}
+
 function generateQRCode(event) {
     event.preventDefault();
 
@@ -422,15 +433,4 @@ function generateQRCode(event) {
 
     // Render the QR code
     // qrcode.make();
-}
-
-function setCookie(){
-
-    // Set Cookies
-
-    const name = document.getElementById("name").value;
-    const gender = document.getElementById("gender").value;
-
-    document.cookie = "Nama" + name;
-    document.cookie = "Jenis Kelamin" + gender;
 }
