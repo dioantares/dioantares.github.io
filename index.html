@@ -510,8 +510,10 @@
                             <label>Pendapatan perbulan</label>
                             <select id="pendapatanPerbulan">
                                 <option disabled selected>Pilih Pendapatan perbulan</option>
-                                <option>< Rp 500.000,-</option>
-                                <option>< Rp 1.000.000,-</option>
+                                <option>
+                                    < Rp 500.000,-</option>
+                                <option>
+                                    < Rp 1.000.000,-</option>
                                 <option>Rp 1.000.000,- s/d Rp 2.000.000,-</option>
                                 <option>Rp 2.000.000,- s/d Rp 3.000.000,-</option>
                                 <option>Rp 3.000.000,- s/d Rp 4.000.000,-</option>
@@ -697,7 +699,7 @@
 
                         <div class="input-field">
                             <label>Aktif di Wilayah</label>
-                            <select id="aktifWilayah"> 
+                            <select id="aktifWilayah">
                                 <option disabled selected>Pilih Aktif di Wilayah</option>
                                 <option>Sedang</option>
                                 <option>Pernah</option>
@@ -785,17 +787,34 @@
                 </div>
 
                 <!-- Buat Canvas QRCode di halaman HTML -->
-                <div id="qrcode" style="display: block; margin-top: 25px"></div>
-                <div id="qrcode2" style="display: block; margin-top: 25px"></div>
-                <div id="qrcode3" style="display: block; margin-top: 25px"></div>
-                <div id="qrcode4" style="display: block; margin-top: 25px"></div>
-                <div id="qrcode5" style="display: block; margin-top: 25px"></div>
-                <div id="qrcode6" style="display: block; margin-top: 25px"></div>
-                <div id="qrcode7" style="display: block; margin-top: 25px"></div>
-                <div id="qrcode8" style="display: block; margin-top: 25px"></div>
-                <div id="qrcode9" style="display: block; margin-top: 25px"></div>
-                <div id="qrcode10" style="display: block; margin-top: 25px"></div>
-                <div id="qrcode11" style="display: block; margin-top: 25px"></div>
+                <div style="display: flex; flex-direction: row;">
+                    <h3>Data Diri dan Identitas</h3>
+                    <div id="qrcode" style="display: block; margin-top: 25px"></div>
+                    
+                    <h3>Kontak</h3>
+                    <div id="qrcode2" style="display: block; margin-top: 25px"></div>
+                    
+                    <h3>Data Pribadi</h3>
+                    <div id="qrcode3" style="display: block; margin-top: 25px"></div>
+                    
+                    <h3>Keluarga</h3>
+                    <div id="qrcode4" style="display: block; margin-top: 25px"></div>
+                    
+                    <h3>Sakramen Baptis dan Komunis Pertama</h3>
+                    <div id="qrcode5" style="display: block; margin-top: 25px"></div>
+                    
+                    <h3>Sakramen Penguatan dan Perkawinan</h3>
+                    <div id="qrcode51" style="display: block; margin-top: 25px"></div>
+                    
+                    <h3>Pekerjaan dan Pendidikan</h3>
+                    <div id="qrcode6" style="display: block; margin-top: 25px"></div>
+                    
+                    <h3>Aktivitas</h3>
+                    <div id="qrcode7" style="display: block; margin-top: 25px"></div>
+                    
+                    <h3>APK</h3>
+                    <div id="qrcode8" style="display: block; margin-top: 25px"></div>
+                </div>
 
             </div>
         </form>
