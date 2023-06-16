@@ -115,10 +115,10 @@ function generateQRCode(event) {
     // Form Data Pribadi
 
     var hobi = document.getElementById("hobi").value;
-    var anggotaAsuransi = document.get.getElementById("anggotaAsuransi").value;
-    var desKesehatan = document.get.getElementById("desKesehatan").value;
-    var cacatTubuh = document.get.getElementById("cacatTubuh").value;
-    var desCacatTubuh = document.get.getElementById("desCacatTubuh").value;
+    var anggotaAsuransi = document.getElementById("anggotaAsuransi").value;
+    var desKesehatan = document.getElementById("desKesehatan").value;
+    var cacatTubuh = document.getElementById("cacatTubuh").value;
+    var desCacatTubuh = document.getElementById("desCacatTubuh").value;
 
     var dataPribadi = {
 
@@ -148,15 +148,15 @@ function generateQRCode(event) {
     // Form Keluarga
 
     var statusPerkawinan = document.getElementById("statusPerkawinan").value;
-    var statusHubKeluarga = document.get.getElementById("statusHubKeluarga").value;
-    var namaIbuKandung = document.get.getElementById("namaIbuKandung").value;
-    var namaAyahKandung = document.get.getElementById("namaAyahKandung").value;
-    var anakKe = document.get.getElementById("anakKe").value;
-    var anakKe1 = document.get.getElementById("anakKe1").value;
-    var anakKe2 = document.get.getElementById("anakKe2").value;
-    var anakKe3 = document.get.getElementById("anakKe3").value;
-    var anakKe4 = document.get.getElementById("anakKe4").value;
-    var anakKe5 = document.get.getElementById("anakKe5").value;
+    var statusHubKeluarga = document.getElementById("statusHubKeluarga").value;
+    var namaIbuKandung = document.getElementById("namaIbuKandung").value;
+    var namaAyahKandung = document.getElementById("namaAyahKandung").value;
+    var anakKe = document.getElementById("anakKe").value;
+    var anakKe1 = document.getElementById("anakKe1").value;
+    var anakKe2 = document.getElementById("anakKe2").value;
+    var anakKe3 = document.getElementById("anakKe3").value;
+    var anakKe4 = document.getElementById("anakKe4").value;
+    var anakKe5 = document.getElementById("anakKe5").value;
 
 
     var dataKeluarga = {
@@ -193,18 +193,18 @@ function generateQRCode(event) {
     // Form Sakramen [Baptis + Komuni Pertama]
 
     var noSuratBaptis = document.getElementById("noSuratBaptis").value;
-    var namaBaptis = document.get.getElementById("namaBaptis").value;
-    var jenisBaptis = document.get.getElementById("jenisBaptis").value;
-    var agamaSebelumnya = document.get.getElementById("agamaSebelumnya").value;
-    var gerejaBaptis = document.get.getElementById("gerejaBaptis").value;
-    var tanggalBaptis = document.get.getElementById("tanggalBaptis").value;
-    var parokiBaptis = document.get.getElementById("parokiBaptis").value;
-    var kotaBaptis = document.get.getElementById("kotaBaptis").value;
-    var noSuratKomuni = document.get.getElementById("noSuratKomuni").value;
-    var tanggalKomuni = document.get.getElementById("tanggalKomuni").value;
-    var tempatKomuni = document.get.getElementById("tempatKomuni").value;
-    var namaParoki = document.get.getElementById("namaParoki").value;
-    var kotaParoki = document.get.getElementById("kotaParoki").value;
+    var namaBaptis = document.getElementById("namaBaptis").value;
+    var jenisBaptis = document.getElementById("jenisBaptis").value;
+    var agamaSebelumnya = document.getElementById("agamaSebelumnya").value;
+    var gerejaBaptis = document.getElementById("gerejaBaptis").value;
+    var tanggalBaptis = document.getElementById("tanggalBaptis").value;
+    var parokiBaptis = document.getElementById("parokiBaptis").value;
+    var kotaBaptis = document.getElementById("kotaBaptis").value;
+    var noSuratKomuni = document.getElementById("noSuratKomuni").value;
+    var tanggalKomuni = document.getElementById("tanggalKomuni").value;
+    var tempatKomuni = document.getElementById("tempatKomuni").value;
+    var namaParoki = document.getElementById("namaParoki").value;
+    var kotaParoki = document.getElementById("kotaParoki").value;
 
     var dataSakramen = {
 
@@ -242,19 +242,19 @@ function generateQRCode(event) {
     // Form Sakramen [Penguatan + Perkawinan]
 
     var noSuratPenguatan = document.getElementById("noSuratPenguatan").value;
-    var tanggalPenguatan = document.get.getElementById("tanggalPenguatan").value;
-    var namaPenguatan = document.get.getElementById("namaPenguatan").value;
-    var gerejaPenguatan = document.get.getElementById("gerejaPenguatan").value;
-    var namaParokiPenguatan = document.get.getElementById("namaParokiPenguatan").value;
-    var kotaPenguatan = document.get.getElementById("kotaPenguatan").value;
-    var noSuratPerkawinan = document.get.getElementById("noSuratPerkawinan").value;
-    var tanggalPerkawinan = document.get.getElementById("tanggalPerkawinan").value;
-    var gerejaPerkawinan = document.get.getElementById("gerejaPerkawinan").value;
-    var namaParokiPerkawinan = document.get.getElementById("namaParokiPerkawinan").value;
-    var kotaPerkawinan = document.get.getElementById("kotaPerkawinan").value;
-    var namaSuami = document.get.getElementById("namaSuami").value;
-    var namaIstri = document.get.getElementById("namaIstri").value;
-    var kategoriPerkawinan = document.get.getElementById("kategoriPerkawinan").value;
+    var tanggalPenguatan = document.getElementById("tanggalPenguatan").value;
+    var namaPenguatan = document.getElementById("namaPenguatan").value;
+    var gerejaPenguatan = document.getElementById("gerejaPenguatan").value;
+    var namaParokiPenguatan = document.getElementById("namaParokiPenguatan").value;
+    var kotaPenguatan = document.getElementById("kotaPenguatan").value;
+    var noSuratPerkawinan = document.getElementById("noSuratPerkawinan").value;
+    var tanggalPerkawinan = document.getElementById("tanggalPerkawinan").value;
+    var gerejaPerkawinan = document.getElementById("gerejaPerkawinan").value;
+    var namaParokiPerkawinan = document.getElementById("namaParokiPerkawinan").value;
+    var kotaPerkawinan = document.getElementById("kotaPerkawinan").value;
+    var namaSuami = document.getElementById("namaSuami").value;
+    var namaIstri = document.getElementById("namaIstri").value;
+    var kategoriPerkawinan = document.getElementById("kategoriPerkawinan").value;
 
     var dataSakramen2 = {
 
@@ -296,20 +296,20 @@ function generateQRCode(event) {
     // Form Pekerjaan Pendidikan
 
     var pekerjaan = document.getElementById("pekerjaan").value;
-    var alamatPekerjaan = document.get.getElementById("alamatPekerjaan").value;
-    var profesi = document.get.getElementById("profesi").value;
-    var profesiLain = document.get.getElementById("profesiLain").value;
-    var pendapatanPerbulan = document.get.getElementById("pendapatanPerbulan").value;
-    var keahlian = document.get.getElementById("keahlian").value;
-    var kursusGereja = document.get.getElementById("kursusGereja").value;
-    var jenisKursus = document.get.getElementById("jenisKursus").value;
-    var pendidikanSekarang = document.get.getElementById("pendidikanSekarang").value;
-    var pendidikanTerakhir = document.get.getElementById("pendidikanTerakhir").value;
-    var jurusan = document.get.getElementById("jurusan").value;
-    var namaSekolah = document.get.getElementById("namaSekolah").value;
-    var kotaSekolah = document.get.getElementById("kotaSekolah").value;
-    var alamatSekolah = document.get.getElementById("alamatSekolah").value;
-    var kategoriSekolah = document.get.getElementById("kategoriSekolah").value;
+    var alamatPekerjaan = document.getElementById("alamatPekerjaan").value;
+    var profesi = document.getElementById("profesi").value;
+    var profesiLain = document.getElementById("profesiLain").value;
+    var pendapatanPerbulan = document.getElementById("pendapatanPerbulan").value;
+    var keahlian = document.getElementById("keahlian").value;
+    var kursusGereja = document.getElementById("kursusGereja").value;
+    var jenisKursus = document.getElementById("jenisKursus").value;
+    var pendidikanSekarang = document.getElementById("pendidikanSekarang").value;
+    var pendidikanTerakhir = document.getElementById("pendidikanTerakhir").value;
+    var jurusan = document.getElementById("jurusan").value;
+    var namaSekolah = document.getElementById("namaSekolah").value;
+    var kotaSekolah = document.getElementById("kotaSekolah").value;
+    var alamatSekolah = document.getElementById("alamatSekolah").value;
+    var kategoriSekolah = document.getElementById("kategoriSekolah").value;
 
     var dataPekerjaan = {
 
@@ -350,18 +350,18 @@ function generateQRCode(event) {
     // Form Aktifitas
 
     var jenisRohaniwan = document.getElementById("jenisRohaniwan").value;
-    var misaHarian = document.get.getElementById("misaHarian").value;
-    var misaMingguan = document.get.getElementById("misaMingguan").value;
-    var misaHariRaya = document.get.getElementById("misaHariRaya").value;
-    var aktifMasyarakat = document.get.getElementById("aktifMasyarakat").value;
-    var posisiMasyarakat = document.get.getElementById("posisiMasyarakat").value;
-    var aktifKeuskupan = document.get.getElementById("aktifKeuskupan").value;
-    var aktifParoki = document.get.getElementById("aktifParoki").value;
-    var aktifLingkungan = document.get.getElementById("aktifLingkungan").value;
-    var aktifWilayah = document.get.getElementById("aktifWilayah").value;
-    var petugasLiturgi = document.get.getElementById("petugasLiturgi").value;
-    var aktifKategorial = document.get.getElementById("aktifKategorial").value;
-    var namaKategorial = document.get.getElementById("namaKategorial").value;
+    var misaHarian = document.getElementById("misaHarian").value;
+    var misaMingguan = document.getElementById("misaMingguan").value;
+    var misaHariRaya = document.getElementById("misaHariRaya").value;
+    var aktifMasyarakat = document.getElementById("aktifMasyarakat").value;
+    var posisiMasyarakat = document.getElementById("posisiMasyarakat").value;
+    var aktifKeuskupan = document.getElementById("aktifKeuskupan").value;
+    var aktifParoki = document.getElementById("aktifParoki").value;
+    var aktifLingkungan = document.getElementById("aktifLingkungan").value;
+    var aktifWilayah = document.getElementById("aktifWilayah").value;
+    var petugasLiturgi = document.getElementById("petugasLiturgi").value;
+    var aktifKategorial = document.getElementById("aktifKategorial").value;
+    var namaKategorial = document.getElementById("namaKategorial").value;
 
 
     var dataAktifitas = {
@@ -401,11 +401,11 @@ function generateQRCode(event) {
     // Form APK
 
     var anggotaAPK = document.getElementById("anggotaAPK").value;
-    var noAPK = document.get.getElementById("noAPK").value;
-    var tanggalMutasiAPK = document.get.getElementById("tanggalMutasiAPK").value;
-    var statusAPK = document.get.getElementById("statusAPK").value;
-    var tanggalKematian = document.get.getElementById("tanggalKematian").value;
-    var pastorPengurusKematian = document.get.getElementById("pastorPengurusKematian").value;
+    var noAPK = document.getElementById("noAPK").value;
+    var tanggalMutasiAPK = document.getElementById("tanggalMutasiAPK").value;
+    var statusAPK = document.getElementById("statusAPK").value;
+    var tanggalKematian = document.getElementById("tanggalKematian").value;
+    var pastorPengurusKematian = document.getElementById("pastorPengurusKematian").value;
 
     var dataAPK = {
 
