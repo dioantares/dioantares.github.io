@@ -181,6 +181,7 @@ function generateQRCode(event) {
     qrcodeContainer4.innerHTML = "";
 
     // Create a QRCode instance
+    alert(jsonString);
     var qrcode4 = new QRCode(qrcodeContainer4, {
         text: jsonString,
         width: 256,
