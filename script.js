@@ -19,6 +19,8 @@ function saveDataUmat() {
     setCookie("dataPekerjaanPendidikan", dataPekerjaanPendidikan, 365);
     setCookie("dataAktifitas", dataAktifitas, 365);
     setCookie("dataAPK", dataAPK, 365);
+
+    alert("Data Berhasil di Save");
 }
 
 function setCookie(cname, cvalue, exdays) {
@@ -193,6 +195,8 @@ function loadDataUmat() {
     document.formUmat.statusAPK.value = dataAPK.statusAPK;
     document.formUmat.tanggalKematian.value = dataAPK.tanggalKematian;
     document.formUmat.pastorPengurusKematian.value = dataAPK.pastorPengurusKematian;
+
+    alert("Data Berhasil di Load");
 }
 
 
@@ -510,6 +514,7 @@ function getDataAPK() {
 function generateQRCode(event) {
     event.preventDefault();
     jsonString = getDataDiri();
+
     console.log(jsonString);
 
     ///////////////////////////////////////////////////////////////
@@ -522,7 +527,7 @@ function generateQRCode(event) {
 
     // Create a QRCode instance
     var qrcode = new QRCode(qrcodeContainer, {
-        text: jsonString,
+        text: getDataDiri(),
         width: 256,
         height: 256,
     });
@@ -537,7 +542,7 @@ function generateQRCode(event) {
 
     // Create a QRCode instance
     var qrcode2 = new QRCode(qrcodeContainer2, {
-        text: jsonString,
+        text: getDataKontak(),
         width: 256,
         height: 256,
     });
@@ -552,7 +557,7 @@ function generateQRCode(event) {
 
     // Create a QRCode instance
     var qrcode3 = new QRCode(qrcodeContainer3, {
-        text: jsonString,
+        text: getDataPribadi(),
         width: 256,
         height: 256,
     });
@@ -567,7 +572,7 @@ function generateQRCode(event) {
 
     // Create a QRCode instance
     var qrcode4 = new QRCode(qrcodeContainer4, {
-        text: jsonString,
+        text: getDataKeluarga(),
         width: 256,
         height: 256,
     });
@@ -582,7 +587,7 @@ function generateQRCode(event) {
 
     // Create a QRCode instance
     var qrcode5 = new QRCode(qrcodeContainer5, {
-        text: jsonString,
+        text: getDataSakramenBaptis(),
         width: 256,
         height: 256,
     });
@@ -597,7 +602,7 @@ function generateQRCode(event) {
 
     // Create a QRCode instance
     var qrcode51 = new QRCode(qrcodeContainer51, {
-        text: jsonString,
+        text: getDataSkramenPenguatan(),
         width: 256,
         height: 256,
     });
@@ -612,7 +617,7 @@ function generateQRCode(event) {
 
     // Create a QRCode instance
     var qrcode6 = new QRCode(qrcodeContainer6, {
-        text: jsonString,
+        text: getDataPekerjaan(),
         width: 256,
         height: 256,
     });
@@ -627,7 +632,7 @@ function generateQRCode(event) {
 
     // Create a QRCode instance
     var qrcode7 = new QRCode(qrcodeContainer7, {
-        text: jsonString,
+        text: getDataAktifitas(),
         width: 256,
         height: 256,
     });
@@ -642,7 +647,7 @@ function generateQRCode(event) {
 
     // Create a QRCode instance
     var qrcode8 = new QRCode(qrcodeContainer8, {
-        text: jsonString,
+        text: getDataAPK(),
         width: 256,
         height: 256,
     });
