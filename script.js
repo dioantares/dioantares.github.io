@@ -1,27 +1,213 @@
-function setCookie(){
+function saveDataUmat() {
 
-    // Set Cookies
+    var datadiri = getDataDiri();
+    var dataKontak = getDataKontak();
+    var dataPribadi = getDataPribadi();
+    var dataKeluarga = getDataKeluarga();
+    var dataSakramenBaptis = getDataSakramenBaptis();
+    var dataSakramenPenguatan = getDataSkramenPenguatan();
+    var dataPekerjaanPendidikan = getDataPekerjaan();
+    var dataAktifitas = getDataAktifitas();
+    var dataAPK = getDataAPK();
 
-    const name = document.getElementById("name").value;
-    const gender = document.getElementById("gender").value;
-
-    document.cookie = "Nama" + name;
-    document.cookie = "Jenis Kelamin" + gender;
+    setCookie("data_diri", datadiri, 365);
+    setCookie("dataKontak", dataKontak, 365);
+    setCookie("dataPribadi", dataPribadi, 365);
+    setCookie("dataKeluarga", dataKeluarga, 365);
+    setCookie("dataSakramenBaptis", dataSakramenBaptis, 365);
+    setCookie("dataSakramenPenguatan", dataSakramenPenguatan, 365);
+    setCookie("dataPekerjaanPendidikan", dataPekerjaanPendidikan, 365);
+    setCookie("dataAktifitas", dataAktifitas, 365);
+    setCookie("dataAPK", dataAPK, 365);
 }
 
-function generateQRCode(event) {
-    event.preventDefault();
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
 
-    // Form Data Diri dan Identitas
+function getCookie(cname) {
+    let name = cname + "=";
+    let ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function loadDataUmat() {
+
+    // Load Cookie Data Diri
+
+    const dataDiri = JSON.parse(getCookie("data_diri"));
+
+    document.formUmat.name.value = dataDiri.name;
+    document.formUmat.nik.value = dataDiri.nik;
+    document.formUmat.gender.value = dataDiri.gender;
+    document.formUmat.birthdate.value = dataDiri.birthdate;
+    document.formUmat.birthplace.value = dataDiri.birthplace;
+    document.formUmat.religion.value = dataDiri.religion;
+    document.formUmat.diocese.value = dataDiri.diocese;
+    document.formUmat.parish.value = dataDiri.parish;
+    document.formUmat.community.value = dataDiri.community;
+    document.formUmat.bloodtype.value = dataDiri.bloodtype;
+    document.formUmat.ethnicity.value = dataDiri.ethnicity;
+    document.formUmat.nationality.value = dataDiri.nationality;
+    document.formUmat.mainLanguage.value = dataDiri.mainLanguage;
+    document.formUmat.protestantType.value = dataDiri.protestantType;
+    document.formUmat.previousReligion.value = dataDiri.previousReligion;
+
+    // Load Cookie Data Kontak
+
+    const dataKontak = JSON.parse(getCookie("dataKontak"));
+
+    document.formUmat.alamat.value = dataKontak.alamat;
+    document.formUmat.kabupaten.value = dataKontak.kabupaten;
+    document.formUmat.kota.value = dataKontak.kota;
+    document.formUmat.kecamatan.value = dataKontak.kecamatan;
+    document.formUmat.kelurahan.value = dataKontak.kelurahan;
+    document.formUmat.rt.value = dataKontak.rt;
+    document.formUmat.rw.value = dataKontak.rw;
+    document.formUmat.bulanTinggal.value = dataKontak.bulanTinggal;
+    document.formUmat.tahunTinggal.value = dataKontak.tahunTinggal;
+    document.formUmat.noTel.value = dataKontak.noTel;
+    document.formUmat.noHP.value = dataKontak.noHP;
+    document.formUmat.email.value = dataKontak.email;
+
+    // Load Cookie Data Pribadi
+
+    const dataPribadi = JSON.parse(getCookie("dataPribadi"));
+
+    document.formUmat.hobi.value = dataPribadi.hobi;
+    document.formUmat.anggotaAsuransi.value = dataPribadi.anggotaAsuransi;
+    document.formUmat.statusKesehatan.value = dataPribadi.statusKesehatan;
+    document.formUmat.desKesehatan.value = dataPribadi.desKesehatan;
+    document.formUmat.cacatTubuh.value = dataPribadi.cacatTubuh;
+    document.formUmat.desCacatTubuh.value = dataPribadi.desCacatTubuh;
+
+    // Load Cookie Data Keluarga
+
+    const dataKeluarga = JSON.parse(getCookie("dataKeluarga"));
+
+    document.formUmat.statusPerkawinan.value = dataKeluarga.statusPerkawinan;
+    document.formUmat.statusHubKeluarga.value = dataKeluarga.statusHubKeluarga;
+    document.formUmat.namaIbuKandung.value = dataKeluarga.namaIbuKandung;
+    document.formUmat.namaAyahKandung.value = dataKeluarga.namaAyahKandung;
+    document.formUmat.anakKe.value = dataKeluarga.anakKe;
+    document.formUmat.anakKe1.value = dataKeluarga.anakKe1;
+    document.formUmat.anakKe2.value = dataKeluarga.anakKe2;
+    document.formUmat.anakKe3.value = dataKeluarga.anakKe3;
+    document.formUmat.anakKe4.value = dataKeluarga.anakKe4;
+    document.formUmat.anakKe5.value = dataKeluarga.anakKe5;
+
+    // Load Cookie Data Sakramen Baptis
+
+    const dataSakramenBaptis = JSON.parse(getCookie("dataSakramenBaptis"));
+
+    document.formUmat.noSuratBaptis.value = dataSakramenBaptis.noSuratBaptis;
+    document.formUmat.namaBaptis.value = dataSakramenBaptis.namaBaptis;
+    document.formUmat.jenisBaptis.value = dataSakramenBaptis.jenisBaptis;
+    document.formUmat.agamaSebelumnya.value = dataSakramenBaptis.agamaSebelumnya;
+    document.formUmat.gerejaBaptis.value = dataSakramenBaptis.gerejaBaptis;
+    document.formUmat.tanggalBaptis.value = dataSakramenBaptis.tanggalBaptis;
+    document.formUmat.parokiBaptis.value = dataSakramenBaptis.parokiBaptis;
+    document.formUmat.kotaBaptis.value = dataSakramenBaptis.kotaBaptis;
+    document.formUmat.noSuratKomuni.value = dataSakramenBaptis.noSuratKomuni;
+    document.formUmat.tanggalKomuni.value = dataSakramenBaptis.tanggalKomuni;
+    document.formUmat.tempatKomuni.value = dataSakramenBaptis.tempatKomuni;
+    document.formUmat.namaParoki.value = dataSakramenBaptis.namaParoki;
+    document.formUmat.kotaParoki.value = dataSakramenBaptis.kotaParoki;
+
+    // Load Cookie Data Sakramen Penguatan
+
+    const dataSakramenPenguatan = JSON.parse(getCookie("dataSakramenPenguatan"));
+
+    document.formUmat.noSuratPenguatan.value = dataSakramenPenguatan.noSuratPenguatan;
+    document.formUmat.tanggalPenguatan.value = dataSakramenPenguatan.tanggalPenguatan;
+    document.formUmat.namaPenguatan.value = dataSakramenPenguatan.namaPenguatan;
+    document.formUmat.gerejaPenguatan.value = dataSakramenPenguatan.gerejaPenguatan;
+    document.formUmat.namaParokiPenguatan.value = dataSakramenPenguatan.namaParokiPenguatan;
+    document.formUmat.kotaPenguatan.value = dataSakramenPenguatan.kotaPenguatan;
+    document.formUmat.noSuratPerkawinan.value = dataSakramenPenguatan.noSuratPerkawinan;
+    document.formUmat.tanggalPerkawinan.value = dataSakramenPenguatan.tanggalPerkawinan;
+    document.formUmat.gerejaPerkawinan.value = dataSakramenPenguatan.gerejaPerkawinan;
+    document.formUmat.namaParokiPerkawinan.value = dataSakramenPenguatan.namaParokiPerkawinan;
+    document.formUmat.kotaPerkawinan.value = dataSakramenPenguatan.kotaPerkawinan;
+    document.formUmat.namaSuami.value = dataSakramenPenguatan.namaSuami;
+    document.formUmat.namaIstri.value = dataSakramenPenguatan.namaIstri;
+    document.formUmat.kategoriPerkawinan.value = dataSakramenPenguatan.kategoriPerkawinan;
+
+    // Load Cookie Data Pekerjaan
+
+    const dataPekerjaanPendidikan = JSON.parse(getCookie("dataPekerjaanPendidikan"));
+
+    document.formUmat.pekerjaan.value = dataPekerjaanPendidikan.pekerjaan;
+    document.formUmat.alamatPekerjaan.value = dataPekerjaanPendidikan.alamatPekerjaan;
+    document.formUmat.profesi.value = dataPekerjaanPendidikan.profesi;
+    document.formUmat.profesiLain.value = dataPekerjaanPendidikan.profesiLain;
+    document.formUmat.pendapatanPerbulan.value = dataPekerjaanPendidikan.pendapatanPerbulan;
+    document.formUmat.keahlian.value = dataPekerjaanPendidikan.keahlian;
+    document.formUmat.kursusGereja.value = dataPekerjaanPendidikan.kursusGereja;
+    document.formUmat.jenisKursus.value = dataPekerjaanPendidikan.jenisKursus;
+    document.formUmat.pendidikanSekarang.value = dataPekerjaanPendidikan.pendidikanSekarang;
+    document.formUmat.pendidikanTerakhir.value = dataPekerjaanPendidikan.pendidikanTerakhir;
+    document.formUmat.jurusan.value = dataPekerjaanPendidikan.jurusan;
+    document.formUmat.namaSekolah.value = dataPekerjaanPendidikan.namaSekolah;
+    document.formUmat.kotaSekolah.value = dataPekerjaanPendidikan.kotaSekolah;
+    document.formUmat.alamatSekolah.value = dataPekerjaanPendidikan.alamatSekolah;
+    document.formUmat.kategoriSekolah.value = dataPekerjaanPendidikan.kategoriSekolah;
+
+    // Load Cookie Data Aktifitas
+
+    const dataAktifitas = JSON.parse(getCookie("dataAktifitas"));
+
+    document.formUmat.jenisRohaniwan.value = dataAktifitas.jenisRohaniwan;
+    document.formUmat.misaHarian.value = dataAktifitas.misaHarian;
+    document.formUmat.misaMingguan.value = dataAktifitas.misaMingguan;
+    document.formUmat.misaHariRaya.value = dataAktifitas.misaHariRaya;
+    document.formUmat.aktifMasyarakat.value = dataAktifitas.aktifMasyarakat;
+    document.formUmat.posisiMasyarakat.value = dataAktifitas.posisiMasyarakat;
+    document.formUmat.aktifKeuskupan.value = dataAktifitas.aktifKeuskupan;
+    document.formUmat.aktifParoki.value = dataAktifitas.aktifParoki;
+    document.formUmat.aktifLingkungan.value = dataAktifitas.aktifLingkungan;
+    document.formUmat.aktifWilayah.value = dataAktifitas.aktifWilayah;
+    document.formUmat.petugasLiturgi.value = dataAktifitas.petugasLiturgi;
+    document.formUmat.aktifKategorial.value = dataAktifitas.aktifKategorial;
+    document.formUmat.namaKategorial.value = dataAktifitas.namaKategorial;
+
+    // Load Cookie Data APK
+
+    const dataAPK = JSON.parse(getCookie("dataAPK"));
+
+    document.formUmat.anggotaAPK.value = dataAPK.anggotaAPK;
+    document.formUmat.noAPK.value = dataAPK.noAPK;
+    document.formUmat.tanggalMutasiAPK.value = dataAPK.tanggalMutasiAPK;
+    document.formUmat.statusAPK.value = dataAPK.statusAPK;
+    document.formUmat.tanggalKematian.value = dataAPK.tanggalKematian;
+    document.formUmat.pastorPengurusKematian.value = dataAPK.pastorPengurusKematian;
+}
+
+
+function getDataDiri() {
+
     var name = document.getElementById("name").value;
+    var nik = document.getElementById("nik").value;
     var gender = document.getElementById("gender").value;
-    var birthDate = document.getElementById("birthdate").value;
-    var birthPlace = document.getElementById("birthplace").value;
+    var birthdate = document.getElementById("birthdate").value;
+    var birthplace = document.getElementById("birthplace").value;
     var religion = document.getElementById("religion").value;
     var diocese = document.getElementById("diocese").value;
     var parish = document.getElementById("parish").value;
     var community = document.getElementById("community").value;
-    var bloodType = document.getElementById("bloodtype").value;
+    var bloodtype = document.getElementById("bloodtype").value;
     var ethnicity = document.getElementById("ethnicity").value;
     var nationality = document.getElementById("nationality").value;
     var mainLanguage = document.getElementById("mainLanguage").value;
@@ -32,14 +218,15 @@ function generateQRCode(event) {
     var data = {
 
         name: name,
+        nik: nik,
         gender: gender,
-        birthDate: birthDate,
-        birthPlace: birthPlace,
+        birthdate: birthdate,
+        birthplace: birthplace,
         religion: religion,
         diocese: diocese,
         parish: parish,
         community: community,
-        bloodType: bloodType,
+        bloodtype: bloodtype,
         ethnicity: ethnicity,
         nationality: nationality,
         mainLanguage: mainLanguage,
@@ -49,23 +236,10 @@ function generateQRCode(event) {
 
     // Convert the JSON object to a string
     var jsonString = JSON.stringify(data);
-    console.log(jsonString);
+    return jsonString;
+}
 
-    // Get the canvas element
-    var qrcodeContainer = document.getElementById("qrcode");
-    qrcodeContainer.innerHTML = "";
-
-    // Create a QRCode instance
-    var qrcode = new QRCode(qrcodeContainer, {
-        text: jsonString,
-        width: 256,
-        height: 256,
-    });
-
-    ///////////////////////////////////////////////////////////////
-
-
-    // Form Kontak
+function getDataKontak() {
 
     var alamat = document.getElementById("alamat").value;
     var kabupaten = document.getElementById("kabupaten").value;
@@ -97,25 +271,14 @@ function generateQRCode(event) {
     }
 
     var jsonString = JSON.stringify(dataKontak);
-    console.log(jsonString);
+    return jsonString;
+}
 
-    // Get the canvas element
-    var qrcodeContainer2 = document.getElementById("qrcode2");
-    qrcodeContainer2.innerHTML = "";
-
-    // Create a QRCode instance
-    var qrcode2 = new QRCode(qrcodeContainer2, {
-        text: jsonString,
-        width: 256,
-        height: 256,
-    });
-
-    ///////////////////////////////////////////////////////////////
-
-    // Form Data Pribadi
+function getDataPribadi() {
 
     var hobi = document.getElementById("hobi").value;
     var anggotaAsuransi = document.getElementById("anggotaAsuransi").value;
+    var statusKesehatan = document.getElementById("statusKesehatan").value;
     var desKesehatan = document.getElementById("desKesehatan").value;
     var cacatTubuh = document.getElementById("cacatTubuh").value;
     var desCacatTubuh = document.getElementById("desCacatTubuh").value;
@@ -124,28 +287,17 @@ function generateQRCode(event) {
 
         hobi: hobi,
         anggotaAsuransi: anggotaAsuransi,
+        statusKesehatan: statusKesehatan,
         desKesehatan: desKesehatan,
         cacatTubuh: cacatTubuh,
         desCacatTubuh: desCacatTubuh,
     }
 
     var jsonString = JSON.stringify(dataPribadi);
-    console.log(jsonString);
+    return jsonString;
+}
 
-    // Get the canvas element
-    var qrcodeContainer3 = document.getElementById("qrcode3");
-    qrcodeContainer3.innerHTML = "";
-
-    // Create a QRCode instance
-    var qrcode3 = new QRCode(qrcodeContainer3, {
-        text: jsonString,
-        width: 256,
-        height: 256,
-    });
-
-    ///////////////////////////////////////////////////////////////
-
-    // Form Keluarga
+function getDataKeluarga() {
 
     var statusPerkawinan = document.getElementById("statusPerkawinan").value;
     var statusHubKeluarga = document.getElementById("statusHubKeluarga").value;
@@ -174,24 +326,10 @@ function generateQRCode(event) {
     }
 
     var jsonString = JSON.stringify(dataKeluarga);
-    console.log(jsonString);
+    return jsonString;
+}
 
-    // Get the canvas element
-    var qrcodeContainer4 = document.getElementById("qrcode4");
-    qrcodeContainer4.innerHTML = "";
-
-    // Create a QRCode instance
-    alert(jsonString);
-    var qrcode4 = new QRCode(qrcodeContainer4, {
-        text: jsonString,
-        width: 256,
-        height: 256,
-    });
-
-
-    ///////////////////////////////////////////////////////////////
-
-    // Form Sakramen [Baptis + Komuni Pertama]
+function getDataSakramenBaptis() {
 
     var noSuratBaptis = document.getElementById("noSuratBaptis").value;
     var namaBaptis = document.getElementById("namaBaptis").value;
@@ -225,22 +363,10 @@ function generateQRCode(event) {
     }
 
     var jsonString = JSON.stringify(dataSakramen);
-    console.log(jsonString);
+    return jsonString;
+}
 
-    // Get the canvas element
-    var qrcodeContainer5 = document.getElementById("qrcode5");
-    qrcodeContainer5.innerHTML = "";
-
-    // Create a QRCode instance
-    var qrcode5 = new QRCode(qrcodeContainer5, {
-        text: jsonString,
-        width: 256,
-        height: 256,
-    });
-
-
-
-    // Form Sakramen [Penguatan + Perkawinan]
+function getDataSkramenPenguatan() {
 
     var noSuratPenguatan = document.getElementById("noSuratPenguatan").value;
     var tanggalPenguatan = document.getElementById("tanggalPenguatan").value;
@@ -276,25 +402,10 @@ function generateQRCode(event) {
     }
 
     var jsonString = JSON.stringify(dataSakramen2);
-    console.log(jsonString);
+    return jsonString;
+}
 
-    // Get the canvas element
-    var qrcodeContainer51 = document.getElementById("qrcode51");
-    qrcodeContainer51.innerHTML = "";
-
-    // Create a QRCode instance
-    var qrcode51 = new QRCode(qrcodeContainer51, {
-        text: jsonString,
-        width: 256,
-        height: 256,
-    });
-
-
-
-
-    ///////////////////////////////////////////////////////////////
-
-    // Form Pekerjaan Pendidikan
+function getDataPekerjaan() {
 
     var pekerjaan = document.getElementById("pekerjaan").value;
     var alamatPekerjaan = document.getElementById("alamatPekerjaan").value;
@@ -332,23 +443,10 @@ function generateQRCode(event) {
     }
 
     var jsonString = JSON.stringify(dataPekerjaan);
-    console.log(jsonString);
+    return jsonString;
+}
 
-    // Get the canvas element
-    var qrcodeContainer6 = document.getElementById("qrcode6");
-    qrcodeContainer6.innerHTML = "";
-
-    // Create a QRCode instance
-    var qrcode6 = new QRCode(qrcodeContainer6, {
-        text: jsonString,
-        width: 256,
-        height: 256,
-    });
-
-
-    ///////////////////////////////////////////////////////////////
-
-    // Form Aktifitas
+function getDataAktifitas() {
 
     var jenisRohaniwan = document.getElementById("jenisRohaniwan").value;
     var misaHarian = document.getElementById("misaHarian").value;
@@ -383,23 +481,10 @@ function generateQRCode(event) {
     }
 
     var jsonString = JSON.stringify(dataAktifitas);
-    console.log(jsonString);
+    return jsonString;
+}
 
-    // Get the canvas element
-    var qrcodeContainer7 = document.getElementById("qrcode7");
-    qrcodeContainer7.innerHTML = "";
-
-    // Create a QRCode instance
-    var qrcode7 = new QRCode(qrcodeContainer7, {
-        text: jsonString,
-        width: 256,
-        height: 256,
-    });
-
-
-    ///////////////////////////////////////////////////////////////
-
-    // Form APK
+function getDataAPK() {
 
     var anggotaAPK = document.getElementById("anggotaAPK").value;
     var noAPK = document.getElementById("noAPK").value;
@@ -419,7 +504,137 @@ function generateQRCode(event) {
     }
 
     var jsonString = JSON.stringify(dataAPK);
+    return jsonString;
+}
+
+function generateQRCode(event) {
+    event.preventDefault();
+    jsonString = getDataDiri();
     console.log(jsonString);
+
+    ///////////////////////////////////////////////////////////////
+
+    // QR Code Data Diri
+
+    // Get the canvas element
+    var qrcodeContainer = document.getElementById("qrcode");
+    qrcodeContainer.innerHTML = "";
+
+    // Create a QRCode instance
+    var qrcode = new QRCode(qrcodeContainer, {
+        text: jsonString,
+        width: 256,
+        height: 256,
+    });
+
+    ///////////////////////////////////////////////////////////////
+
+    // QR Code Data Kontak
+
+    // Get the canvas element
+    var qrcodeContainer2 = document.getElementById("qrcode2");
+    qrcodeContainer2.innerHTML = "";
+
+    // Create a QRCode instance
+    var qrcode2 = new QRCode(qrcodeContainer2, {
+        text: jsonString,
+        width: 256,
+        height: 256,
+    });
+
+    ///////////////////////////////////////////////////////////////
+
+    // QR Code Data Pribadi
+
+    // Get the canvas element
+    var qrcodeContainer3 = document.getElementById("qrcode3");
+    qrcodeContainer3.innerHTML = "";
+
+    // Create a QRCode instance
+    var qrcode3 = new QRCode(qrcodeContainer3, {
+        text: jsonString,
+        width: 256,
+        height: 256,
+    });
+
+    ///////////////////////////////////////////////////////////////
+
+    // QR Code Keluarga
+
+    // Get the canvas element
+    var qrcodeContainer4 = document.getElementById("qrcode4");
+    qrcodeContainer4.innerHTML = "";
+
+    // Create a QRCode instance
+    var qrcode4 = new QRCode(qrcodeContainer4, {
+        text: jsonString,
+        width: 256,
+        height: 256,
+    });
+
+    ///////////////////////////////////////////////////////////////
+
+    // QR Code Sakramen [Baptis + Komuni Pertama]
+
+    // Get the canvas element
+    var qrcodeContainer5 = document.getElementById("qrcode5");
+    qrcodeContainer5.innerHTML = "";
+
+    // Create a QRCode instance
+    var qrcode5 = new QRCode(qrcodeContainer5, {
+        text: jsonString,
+        width: 256,
+        height: 256,
+    });
+
+    ///////////////////////////////////////////////////////////////
+
+    // QR Code Sakramen [Penguatan + Perkawinan]
+
+    // Get the canvas element
+    var qrcodeContainer51 = document.getElementById("qrcode51");
+    qrcodeContainer51.innerHTML = "";
+
+    // Create a QRCode instance
+    var qrcode51 = new QRCode(qrcodeContainer51, {
+        text: jsonString,
+        width: 256,
+        height: 256,
+    });
+
+    ///////////////////////////////////////////////////////////////
+
+    // QR Code Pekerjaan Pendidikan
+
+    // Get the canvas element
+    var qrcodeContainer6 = document.getElementById("qrcode6");
+    qrcodeContainer6.innerHTML = "";
+
+    // Create a QRCode instance
+    var qrcode6 = new QRCode(qrcodeContainer6, {
+        text: jsonString,
+        width: 256,
+        height: 256,
+    });
+
+    ///////////////////////////////////////////////////////////////
+
+    // QR Code Aktifitas
+
+    // Get the canvas element
+    var qrcodeContainer7 = document.getElementById("qrcode7");
+    qrcodeContainer7.innerHTML = "";
+
+    // Create a QRCode instance
+    var qrcode7 = new QRCode(qrcodeContainer7, {
+        text: jsonString,
+        width: 256,
+        height: 256,
+    });
+
+    ///////////////////////////////////////////////////////////////
+
+    // QR Code APK
 
     // Get the canvas element
     var qrcodeContainer8 = document.getElementById("qrcode8");
