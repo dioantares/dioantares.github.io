@@ -522,6 +522,8 @@ function generateQRCode(event) {
     // Get the canvas element
     var qrcodeContainer = document.getElementById("qrcode");
     qrcodeContainer.innerHTML = "";
+
+    console.log("QR Code Data Diri Berhasil dibuat.")
   
     // Create a QRCode instance
     new QRCode(qrcodeContainer, {
@@ -538,7 +540,9 @@ function generateQRCode(event) {
     // Get the canvas element
     var qrcodeContainer2 = document.getElementById("qrcode2");
     qrcodeContainer2.innerHTML = "";
-  
+    
+    console.log("QR Code Data Pribadi Berhasil dibuat.")
+
     // Create a QRCode instance
     new QRCode(qrcodeContainer2, {
       text: getDataKontak(),
@@ -555,6 +559,8 @@ function generateQRCode(event) {
     // Get the canvas element
     var qrcodeContainer3 = document.getElementById("qrcode3");
     qrcodeContainer3.innerHTML = "";
+
+    console.log("QR Code Data Pribadi Berhasil dibuat.")
   
     // Create a QRCode instance
     new QRCode(qrcodeContainer3, {
@@ -573,7 +579,7 @@ function generateQRCode(event) {
     var qrcodeContainer4 = document.getElementById("qrcode4");
     qrcodeContainer4.innerHTML = "";
   
-    console.log(getDataKeluarga())
+    console.log("QR Code Keluarga Berhasil dibuat.")
   
     // Create a QRCode instance
     new QRCode(qrcodeContainer4, {
@@ -590,7 +596,9 @@ function generateQRCode(event) {
     // Get the canvas element
     var qrcodeContainer5 = document.getElementById("qrcode5");
     qrcodeContainer5.innerHTML = "";
-  
+    
+    console.log("QR Code Baptis + Komuni Pertama Berhasil dibuat.")
+
     // Create a QRCode instance
     new QRCode(qrcodeContainer5, {
       text: getDataSakramenBaptis(),
@@ -606,6 +614,8 @@ function generateQRCode(event) {
     // Get the canvas element
     var qrcodeContainer51 = document.getElementById("qrcode51");
     qrcodeContainer51.innerHTML = "";
+
+    console.log("QR Code Penguatan + Perkawinan Berhasil dibuat.")
   
     // Create a QRCode instance
     new QRCode(qrcodeContainer51, {
@@ -623,6 +633,8 @@ function generateQRCode(event) {
     var qrcodeContainer6 = document.getElementById("qrcode6");
     qrcodeContainer6.innerHTML = "";
   
+    console.log("QR Code Pekerjaan Pendidikan Berhasil dibuat.")
+
     // Create a QRCode instance
     new QRCode(qrcodeContainer6, {
       text: getDataPekerjaan(),
@@ -639,6 +651,8 @@ function generateQRCode(event) {
     var qrcodeContainer7 = document.getElementById("qrcode7");
     qrcodeContainer7.innerHTML = "";
   
+    console.log("QR Code Aktifitas Berhasil dibuat.")
+
     // Create a QRCode instance
     new QRCode(qrcodeContainer7, {
       text: getDataAktifitas(),
@@ -654,6 +668,8 @@ function generateQRCode(event) {
     // Get the canvas element
     var qrcodeContainer8 = document.getElementById("qrcode8");
     qrcodeContainer8.innerHTML = "";
+
+    console.log("QR Code APK Berhasil dibuat.")
   
     // Create a QRCode instance
     new QRCode(qrcodeContainer8, {
