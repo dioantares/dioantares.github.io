@@ -31,17 +31,17 @@ function setCookie(cname, cvalue, exdays) {
 }
 
 function getCookie(cname) {
-    let name = cname + "=";
-    let ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') {
+    let name = cname + "="; // membuat nama cookies
+    let ca = document.cookie.split(';'); // setiap isi dari nama cookies akan dipisahkan oleh titik koma
+    for (let i = 0; i < ca.length; i++) { // ketika i = 0 , dan i lebih kecil dari variabel yang berisi pada nama cookies
+        let c = ca[i]; // c adalah variabel baru yang berisikan isi setiap cookies yang berisikan nilai dari array i
+        while (c.charAt(0) == ' ') { 
             c = c.substring(1);
         }
         if (c.indexOf(name) == 0) {
             return c.substring(name.length, c.length);
         }
-    }
+    } // ketika c berada pada char ke 0 maka c akan berisikan nilai pada field yang terisi
     return "";
 }
 
