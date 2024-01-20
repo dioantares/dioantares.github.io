@@ -31,17 +31,17 @@ function setCookie(cname, cvalue, exdays) {
 }
 
 function getCookie(cname) {
-    let name = cname + "="; // membuat nama cookies
-    let ca = document.cookie.split(';'); // setiap isi dari nama cookies akan dipisahkan oleh titik koma
-    for (let i = 0; i < ca.length; i++) { // ketika i = 0 , dan i lebih kecil dari variabel yang berisi pada nama cookies
-        let c = ca[i]; // c adalah variabel baru yang berisikan isi setiap cookies yang berisikan nilai dari array i
-        while (c.charAt(0) == ' ') { 
+    let name = cname + "=";
+    let ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
             c = c.substring(1);
         }
         if (c.indexOf(name) == 0) {
             return c.substring(name.length, c.length);
         }
-    } // ketika c berada pada char ke 0 maka c akan berisikan nilai pada field yang terisi
+    }
     return "";
 }
 
@@ -514,144 +514,155 @@ function getDataAPK() {
 function generateQRCode(event) {
     event.preventDefault();
     jsonString = getDataDiri();
-
-    console.log(jsonString);
-
+  
     ///////////////////////////////////////////////////////////////
-
+  
     // QR Code Data Diri
-
+  
     // Get the canvas element
     var qrcodeContainer = document.getElementById("qrcode");
     qrcodeContainer.innerHTML = "";
-
+  
     // Create a QRCode instance
-    var qrcode = new QRCode(qrcodeContainer, {
-        text: getDataDiri(),
-        width: 256,
-        height: 256,
+    new QRCode(qrcodeContainer, {
+      text: getDataDiri(),
+      width: 256,
+      height: 256,
+      correctLevel: QRCode.CorrectLevel.L
     });
-
+  
     ///////////////////////////////////////////////////////////////
-
+  
     // QR Code Data Kontak
-
+  
     // Get the canvas element
     var qrcodeContainer2 = document.getElementById("qrcode2");
     qrcodeContainer2.innerHTML = "";
-
+  
     // Create a QRCode instance
-    var qrcode2 = new QRCode(qrcodeContainer2, {
-        text: getDataKontak(),
-        width: 256,
-        height: 256,
-    });
-
+    new QRCode(qrcodeContainer2, {
+      text: getDataKontak(),
+      width: 256,
+      height: 256,
+      correctLevel: QRCode.CorrectLevel.L
+    })
+    
+  
     ///////////////////////////////////////////////////////////////
-
+  
     // QR Code Data Pribadi
-
+  
     // Get the canvas element
     var qrcodeContainer3 = document.getElementById("qrcode3");
     qrcodeContainer3.innerHTML = "";
-
+  
     // Create a QRCode instance
-    var qrcode3 = new QRCode(qrcodeContainer3, {
-        text: getDataPribadi(),
-        width: 256,
-        height: 256,
+    new QRCode(qrcodeContainer3, {
+      text: getDataPribadi(),
+      width: 256,
+      height: 256,
+      correctLevel: QRCode.CorrectLevel.L
     });
-
+    
+  
     ///////////////////////////////////////////////////////////////
-
+  
     // QR Code Keluarga
-
+    
     // Get the canvas element
     var qrcodeContainer4 = document.getElementById("qrcode4");
     qrcodeContainer4.innerHTML = "";
-
+  
+    console.log(getDataKeluarga())
+  
     // Create a QRCode instance
-    var qrcode4 = new QRCode(qrcodeContainer4, {
-        text: getDataKeluarga(),
-        width: 256,
-        height: 256,
+    new QRCode(qrcodeContainer4, {
+      text: getDataKeluarga(),
+      width: 256,
+      height: 256,
+      correctLevel: QRCode.CorrectLevel.L
     });
-
+  
     ///////////////////////////////////////////////////////////////
-
+  
     // QR Code Sakramen [Baptis + Komuni Pertama]
-
+  
     // Get the canvas element
     var qrcodeContainer5 = document.getElementById("qrcode5");
     qrcodeContainer5.innerHTML = "";
-
+  
     // Create a QRCode instance
-    var qrcode5 = new QRCode(qrcodeContainer5, {
-        text: getDataSakramenBaptis(),
-        width: 256,
-        height: 256,
+    new QRCode(qrcodeContainer5, {
+      text: getDataSakramenBaptis(),
+      width: 256,
+      height: 256,
+      correctLevel: QRCode.CorrectLevel.L
     });
-
+  
     ///////////////////////////////////////////////////////////////
-
+  
     // QR Code Sakramen [Penguatan + Perkawinan]
-
+  
     // Get the canvas element
     var qrcodeContainer51 = document.getElementById("qrcode51");
     qrcodeContainer51.innerHTML = "";
-
+  
     // Create a QRCode instance
-    var qrcode51 = new QRCode(qrcodeContainer51, {
-        text: getDataSkramenPenguatan(),
-        width: 256,
-        height: 256,
+    new QRCode(qrcodeContainer51, {
+      text: getDataSkramenPenguatan(),
+      width: 256,
+      height: 256,
+      correctLevel: QRCode.CorrectLevel.L
     });
-
+  
     ///////////////////////////////////////////////////////////////
-
+  
     // QR Code Pekerjaan Pendidikan
-
+  
     // Get the canvas element
     var qrcodeContainer6 = document.getElementById("qrcode6");
     qrcodeContainer6.innerHTML = "";
-
+  
     // Create a QRCode instance
-    var qrcode6 = new QRCode(qrcodeContainer6, {
-        text: getDataPekerjaan(),
-        width: 256,
-        height: 256,
+    new QRCode(qrcodeContainer6, {
+      text: getDataPekerjaan(),
+      width: 256,
+      height: 256,
+      correctLevel: QRCode.CorrectLevel.L
     });
-
+  
     ///////////////////////////////////////////////////////////////
-
+  
     // QR Code Aktifitas
-
+  
     // Get the canvas element
     var qrcodeContainer7 = document.getElementById("qrcode7");
     qrcodeContainer7.innerHTML = "";
-
+  
     // Create a QRCode instance
-    var qrcode7 = new QRCode(qrcodeContainer7, {
-        text: getDataAktifitas(),
-        width: 256,
-        height: 256,
+    new QRCode(qrcodeContainer7, {
+      text: getDataAktifitas(),
+      width: 256,
+      height: 256,
+      correctLevel: QRCode.CorrectLevel.L
     });
-
+  
     ///////////////////////////////////////////////////////////////
-
+  
     // QR Code APK
-
+  
     // Get the canvas element
     var qrcodeContainer8 = document.getElementById("qrcode8");
     qrcodeContainer8.innerHTML = "";
-
+  
     // Create a QRCode instance
-    var qrcode8 = new QRCode(qrcodeContainer8, {
-        text: getDataAPK(),
-        width: 256,
-        height: 256,
+    new QRCode(qrcodeContainer8, {
+      text: getDataAPK(),
+      width: 256,
+      height: 256,
+      correctLevel: QRCode.CorrectLevel.L
     });
-
+  
     // Render the QR code
     // qrcode.make();
-}
+  }
