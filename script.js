@@ -1,3 +1,9 @@
+// Refresh Halaman Website
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
+///////////////////////////////
+
 function saveDataUmat() {
 
     var datadiri = getDataDiri();

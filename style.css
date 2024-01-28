@@ -171,6 +171,16 @@ select {
     cursor: pointer;
 }
 
+.bawah{
+    background-color: #265df2;
+    font-size: 14px;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 .container form .btnText {
     font-size: 14px;
     font-weight: 400;
